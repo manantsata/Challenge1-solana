@@ -10,6 +10,11 @@ const {
 // require node:process to read argv
 const process = require("process");
 const userPublicKey = process.argv[2]; //get the key from the argv, an array that look like : [node,index.js,the_user_public_key]
+if (!userPublicKey) {
+    console.log("usage: node index.js <user_public_key>");
+    return;
+}
+
 
 // Create a new keypair
 const newPair = new Keypair();
